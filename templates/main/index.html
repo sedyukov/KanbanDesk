@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <script type="text/javascript" src="{% static "js/jquery-3.6.0.min.js" %}"></script>
+    <title>Notes</title>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="menu">
+                <button class="aim">NULL</button>
+                <button name="menu_button" class="menu_button">New note</button>
+                <div class="menu_sort">
+                    <h2 class="menu_title">Sort</h2>
+                    <div class="menu_sort_by_time">
+                        <div class="menu_sort_by_time_title">Sort by time</div>
+                        <div class="menu_sort_by_time_date">
+                            <input type="date" name="firstDate">
+                            <input type="date" name="secondDate">
+                        </div>
+                    </div>
+                    <button name="menu_button" class="menu_button">All categories</button>
+                    <div>
+                        <ul class="menu_categories">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <ul class="notes">
+
+                </ul>
+            </div>
+
+            <form method="post" id="ajax_form"  action="" class="creating"> <!-- Заменить div на form -->
+                {% csrf_token %}
+                <div class="creating_category_and_name">
+                    <input type="text" placeholder="Note category" name="category"class="creating_category">
+                    <input type="text" placeholder="Note name" name="name" class="creating_name">
+
+                </div>
+
+                <textarea type="text" placeholder="Note content" name="text" class="creating_content"></textarea>
+
+                <div class="creating_cansel_or_create">
+                    <button type="reset" name="cansel" class="creating_button">Cansel</button>
+                    <button id="submit" name="create" class="creating_button to_create">Create</button>
+                </div>
+            </form>
+        </div>
+    </section>
+{#    <script> </script>#}
+{#    <script>#}
+{#        let newNoteBtn = document.querySelectorAll('.menu_button')[0],#}
+{#        allCategoriesBtn = document.querySelectorAll('.menu_button')[1],#}
+{#        fieldCategory = document.querySelector('.menu_categories'),#}
+{##}
+{#        fieldNotes = document.querySelector('.notes'),#}
+{#        note = document.querySelector('.notes_item'),#}
+{#        trashBtn = document.querySelectorAll('.notes_trash')[0],#}
+{##}
+{#        inputNoteCategory = document.querySelector('.creating_category'),#}
+{#        inputNoteName = document.querySelector('.creating_name'),#}
+{#        inputNoteContent = document.querySelector('.creating_content'),#}
+{#        // canselBtn = document.querySelectorAll('.creating_button')[0],#}
+{#        createBtn = document.querySelectorAll('.creating_button')[1];#}
+{##}
+{#    let noteList = [];#}
+{##}
+{##}
+{#    if (localStorage.getItem('note')) {#}
+{#        noteList = JSON.parse(localStorage.getItem('note'));#}
+{#        addNote();#}
+{#    }#}
+{##}
+{#    function addNote() {#}
+{#        noteList.forEach(function(item, i) {#}
+{##}
+{#            fieldNotes.insertAdjacentHTML('beforeend',#}
+{#                `<li class="notes_item" id="${i}">#}
+{#                    <label for="${i}" class="notes_name">${item.name}</label>#}
+{#                    <input type="image" src="/static/icon/Vector.svg" alt="trash" class="notes_trash">#}
+{#                </li>`#}
+{#            );#}
+{##}
+{#            fieldCategory.insertAdjacentHTML('beforeend',#}
+{#                `<li class="menu_item">${item.category}</li>`#}
+{#            );#}
+{##}
+{#            item.id = i;#}
+{#        });#}
+{##}
+{##}
+{#    }#}
+{##}
+{#    createBtn.addEventListener('click', function() {#}
+{#        let newNote = {#}
+{#            category: inputNoteCategory.value,#}
+{#            name: inputNoteName.value,#}
+{#            content: inputNoteContent.value,#}
+{#            id: 0,#}
+{#            dateCreating: false#}
+{#        };#}
+{##}
+{#        noteList.push(newNote);#}
+{##}
+{#        addNote();#}
+{#        localStorage.setItem('note', JSON.stringify(noteList));#}
+{#    });#}
+{##}
+{##}
+{#    // trashBtn.addEventListener('click', function() {#}
+{#    //     note.remove();#}
+{#    // });#}
+{##}
+{##}
+{#    fieldNotes.addEventListener('click', function(event) {#}
+{#        // console.log(JSON.parse(localStorage.getItem('note')));#}
+{#        // console.log(noteList[0].id);#}
+{#        let idNoteItem = +event.target.getAttribute('id');#}
+{#        console.log(idNoteItem);#}
+{#    })#}
+{#    </script>#}
+    <script src="{% static "js/request.js" %}"></script>
+</body>
+</html>

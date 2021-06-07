@@ -1,0 +1,246 @@
+body {
+  font-family: Sans-serif;
+  font-size: 14px;
+  width: 100%;
+  background-color: #FFEFD5;
+}
+
+
+.top{
+  background-color: rgba(243, 168, 168, 0.815) ;
+}
+
+.logo{
+  margin-left: 70%;
+}
+
+  .kanban {
+    align-self: flex-end;
+    color: inherit;
+    display: block;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+  }
+
+
+  button{
+    align-items: center;
+
+  border-radius: 2px;
+    color: #ffffff;
+    position: relative;
+    min-width: 44px;
+    padding: 20px 16px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    text-transform: none;
+    letter-spacing: 1px;
+    overflow: hidden;
+    text-decoration: none;
+    font-size: 100%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+
+  width: 10%;
+  border-radius: 15px;
+
+  }
+
+
+
+
+
+    h1 {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+    }
+
+
+
+    .sticker {
+      max-width: 100%;
+      top: 0px;
+      margin: 0 auto;
+      display: block;
+      vertical-align: top;
+    }
+
+
+    H2,
+    h1,
+    button {
+      margin-left: 5px;
+      font-family: 'Arbutus Slab', serif;
+    }
+
+    h2 {
+      color: #607D8B;
+    }
+
+    .image_1 {
+      width: 20px;
+    }
+
+    ol.kanban.To-do {
+      border-top: 5px solid #FFB300;
+    }
+
+    ol.kanban.legend {
+      border-top: 5px solid #FF3D00;
+    }
+
+    ol.kanban.progress {
+      border-top: 5px solid #29B6F6;
+    }
+
+    ol.kanban.Done {
+      border-top: 5px solid #8BC34A;
+    }
+
+    ol.kanban.Dones {
+      border-top: 5px solid #8BC34A;
+    }
+    ol.kanban {
+      border-top: 5px solid #78909C;
+      width: 20%;
+      height: auto;
+      margin: 1%;
+      max-width: 250px;
+      min-width: 120px;
+      display: inline-block;
+      vertical-align: top;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+      flex-direction: column;
+      min-height: 200px;
+      z-index: 1;
+      position: relative;
+      background: #fff;
+      padding: 1em;
+      border-radius: 2px;
+    }
+
+    .sticker-item {
+      display: block;
+      position: relative;
+      list-style: none;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      font-size: 16px;
+      min-height: 200px;
+      overflow: hidden;
+      z-index: 1;
+      position: relative;
+      background: #fff;
+      border-radius: 2px;
+      box-sizing: border-box;
+    }
+
+    .title {
+      align-self: flex-end;
+      color: inherit;
+      display: block;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      font-size: 24px;
+      line-height: normal;
+      overflow: hidden;
+      -webkit-transform-origin: 149px 48px;
+      transform-origin: 149px 48px;
+      margin: 0;
+      margin-top: 0;
+    }
+    .desks{
+      margin-left: 20px;
+    }
+    .tarea{
+      width: 97%;
+      height: 200px;
+      resize: none;
+    }
+
+    .text {
+      color: grey;
+      border-top: 1px solid;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 18px;
+      overflow: hidden;
+      padding: 16px;
+      width: 85%;
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+    }
+.inp_text{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 220px;
+    height: 30px;
+}
+
+
+
+    .sticker {
+      position: relative;
+      display: block;
+      list-style: none;
+      margin-top: 0;
+    }
+
+
+    .sticker-item {
+      display: block;
+      margin: 5px 0;
+      padding: 5px 10px;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      border: 1px solid #ccc;
+      background: #fafafa;
+      -webkit-border-radius: 3px;
+      border-radius: 5px;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+    }
+
+    .actions {
+      border-top: 1px solid rgba(0, 0, 0, .1);
+      font-size: 8px;
+      line-height: normal;
+      width: 100%;
+      color: #B0BEC5;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    button.addbutt {
+      background-color: #EEEEEE;
+      color: #607D8B;
+      width: 100%;
+      font-size: medium;
+      }
+
+      button.func{
+        background-color: #EEEEEE;
+        color: #607D8B;
+        padding: 2px;
+        width: 20%;
+        font-size: small;
+        border-radius: 5px;
+
+      }
+
+      button.menu{
+        background-color: transparent;
+        border-color:transparent;
+        margin-left: 40%;
+      }

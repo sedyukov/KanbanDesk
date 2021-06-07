@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>good!</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+
+<body>
+{% verbatim %}
+<div id="app">
+
+    <div class="top">
+        <div class="logo">
+          <img src="/static/icon/logo1.png" alt="альтернативный текст"/>
+        </div>
+    </div>
+
+  <div class="kanban__title">
+
+      <div class="sticker">
+    <ol class="desks kanban  Dones">
+                      <h2>Ваши доски</h2>
+                        <li class="sticker-item" data-id="1">
+                          <input v-model="legNameInp" type="text" class="inp_text">
+                            <div class="text" v-for="leg in legends" v-bind:id="leg.id">
+                             <div class="note_text" v-on:click="setLegId(leg.id)">{{ leg.name }}</div>
+                             <button v-on:click="deleteLeg(leg.id)" class="func">X</button>
+                            </div>
+                        </li>
+              <div class="actions">
+                    <button class="addbutt" v-on:click="createLeg()">Add New</button>
+              </div>
+        </ol>
+        <ol class="kanban legend">
+          <div class="kanban__title">
+              <h2> Легенда<button class="menu"></button>
+                </h2></div>
+         <li class="sticker-item" data-id="1">
+          <h3 class="title sticker-handle"> </h3>
+                      <textarea v-model="legText" class="tarea"> </textarea>
+              </li>
+            <div class="actions">
+                    <button class="addbutt" v-on:click="saveText()">Save text</button>
+              </div>
+        </ol>
+
+
+            <ol class="kanban To-do">
+              <div class="kanban__title">
+                <h2> To do</h2></div>
+
+             <li class="sticker-item" data-id="1">
+                  <input v-model="inpText1" type="text" class="inp_text">
+                 <div class="text" v-for="todo in curTodos" v-bind:id="todo.id">
+                     <div class="note_text" v-on:click="setEditID(todo.id, 1)">{{ todo.text }}</div>
+                     <div class="buttons">
+                             <button v-on:click="deleteTodo(todo.id)" class="func">X</button>
+                             <button v-on:click="changeTodo(todo.id)" class="func">-></button>
+                     </div>
+                 </div>
+              </li>
+
+                <div class="actions">
+                    <button v-on:click="createTodo(1)" class="addbutt">{{ btnTextAdd1 }}</button>
+                </div>
+            </ol>
+
+
+                  <ol class="kanban progress">
+                    <h2> In progress</h2>
+                      <li class="sticker-item" data-id="1">
+                      <input v-model="inpText2" type="text" class="inp_text">
+                     <div class="text" v-for="todo in curInProgress" v-bind:id="todo.id">
+                         <div class="note_text" v-on:click="setEditID(todo.id, 2)">{{ todo.text }}</div>
+                         <div class="buttons">
+                             <button v-on:click="deleteTodo(todo.id)" class="func">X</button>
+                             <button v-on:click="changeProgress(todo.id)" class="func">-></button>
+                         </div>
+                     </div>
+                    </li>
+                      <div class="actions">
+                        <button v-on:click="createTodo(2)" class="addbutt">{{ btnTextAdd2 }}</button>
+                      </div>
+                    </ol>
+
+
+                <ol class="kanban  Done">
+                  <h2>Done</h2>
+                    <li class="sticker-item" data-id="1">
+                      <input v-model="inpText3" type="text" class="inp_text">
+                        <div class="text" v-for="todo in curDone" v-bind:id="todo.id">
+                         <div class="note_text" v-on:click="setEditID(todo.id, 3)">{{ todo.text }}</div>
+                         <button v-on:click="deleteTodo(todo.id)" class="func">X</button>
+                        </div>
+                    </li>
+          <div class="actions">
+                <button v-on:click="createTodo(3)" class="addbutt">{{ btnTextAdd3 }}</button>
+          </div>
+        </ol>
+
+    </div>
+  </div>
+</div>
+{% endverbatim %}
+<script src="/static/js/app.js"></script>
+
+</body>
