@@ -59,6 +59,7 @@ class Todo(models.Model):
     text = models.CharField('Текст', max_length=50)
     legid = models.ForeignKey(Legends, on_delete=models.CASCADE)
     type = models.CharField('Тип задачи', max_length=50)
+    prio = models.CharField('Тип задачи', max_length=50)
 
     def __str__(self):
         return self.text

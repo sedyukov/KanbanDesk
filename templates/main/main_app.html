@@ -27,8 +27,8 @@
                         <li class="sticker-item" data-id="1">
                           <input v-model="legNameInp" type="text" class="inp_text">
                             <div class="text" v-for="leg in legends" v-bind:id="leg.id">
-                             <div class="note_text" v-on:click="setLegId(leg.id)">{{ leg.name }}</div>
-                             <button v-on:click="deleteLeg(leg.id)" class="func">X</button>
+                             <div class="note_text" v-on:click="setLegId(leg.id)" v-bind:class="leg.color">{{ leg.name }}</div>
+                             <button v-on:click="deleteLeg(leg.id)" class="func" :class="leg.id">X</button>
                             </div>
                         </li>
               <div class="actions">
@@ -55,8 +55,14 @@
 
              <li class="sticker-item" data-id="1">
                   <input v-model="inpText1" type="text" class="inp_text">
+                    <input type="radio" id="one" value="green" v-model="picked1" name="td">
+                      <label for="one">Low</label>
+                      <input type="radio" id="two" value="yellow" v-model="picked1" name="td">
+                      <label for="two">Mid</label>
+                      <input type="radio" id="two" value="red" v-model="picked1" name="td">
+                      <label for="two">High</label>
                  <div class="text" v-for="todo in curTodos" v-bind:id="todo.id">
-                     <div class="note_text" v-on:click="setEditID(todo.id, 1)">{{ todo.text }}</div>
+                     <div class="note_text" v-on:click="setEditID(todo.id, 1)" v-bind:class="todo.prio + todo.color" v-bind:class="todo.color">{{ todo.text }}</div>
                      <div class="buttons">
                              <button v-on:click="deleteTodo(todo.id)" class="func">X</button>
                              <button v-on:click="changeTodo(todo.id)" class="func">-></button>
@@ -74,8 +80,14 @@
                     <h2> In progress</h2>
                       <li class="sticker-item" data-id="1">
                       <input v-model="inpText2" type="text" class="inp_text">
+                      <input type="radio" id="one" value="green" v-model="picked2" name="pro">
+                      <label for="one">Low</label>
+                      <input type="radio" id="two" value="yellow" v-model="picked2" name="pro">
+                      <label for="two">Mid</label>
+                      <input type="radio" id="two" value="red" v-model="picked2" name="pro">
+                      <label for="two">High</label>
                      <div class="text" v-for="todo in curInProgress" v-bind:id="todo.id">
-                         <div class="note_text" v-on:click="setEditID(todo.id, 2)">{{ todo.text }}</div>
+                         <div class="note_text" v-on:click="setEditID(todo.id, 2)" v-bind:class="todo.prio + todo.color">{{ todo.text }}</div>
                          <div class="buttons">
                              <button v-on:click="deleteTodo(todo.id)" class="func">X</button>
                              <button v-on:click="changeProgress(todo.id)" class="func">-></button>
@@ -92,8 +104,15 @@
                   <h2>Done</h2>
                     <li class="sticker-item" data-id="1">
                       <input v-model="inpText3" type="text" class="inp_text">
+                        <input type="radio" id="one" value="green" v-model="picked3" name="dn">
+                      <label for="one">Low</label>
+                      <input type="radio" id="two" value="yellow" v-model="picked3" name="dn">
+                      <label for="two">Mid</label>
+                      <input type="radio" id="two" value="red" v-model="picked3" name="dn">
+                      <label for="two">High</label>
+
                         <div class="text" v-for="todo in curDone" v-bind:id="todo.id">
-                         <div class="note_text" v-on:click="setEditID(todo.id, 3)">{{ todo.text }}</div>
+                         <div class="note_text" v-on:click="setEditID(todo.id, 3)" v-bind:class="todo.prio + todo.color">{{ todo.text }}</div>
                          <button v-on:click="deleteTodo(todo.id)" class="func">X</button>
                         </div>
                     </li>

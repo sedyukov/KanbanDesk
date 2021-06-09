@@ -21,7 +21,7 @@ class TodoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Todo
-        fields = ("id", "text", "legid", "type")
+        fields = ("id", "text", "legid", "type", "prio")
 
 
 class LegendSerializer(serializers.ModelSerializer):
